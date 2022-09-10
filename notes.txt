@@ -1,0 +1,47 @@
+what is a promise?
+A promise is a javascript object that links producing code and consuming code.
+it is an object which holds the the result of async operations.
+
+syntax: var variablename = new Promise(()=>{});
+
+new is an inbuilt keyword , in OOP like javascript
+inside the promise, it is always takes function as a parameter,
+inside the function , we have 2 important parameters=> resolve ,reject 
+
+promise states:
+1.pending
+2.fulfilled
+3.rejected 
+
+resolve and reject are not occur at the same time.
+when the result is got rejected it will always shown an error msg along with the result.
+
+when we dont want to get the error msg along the rejected state we have to handle the functions.
+.then => success=> resolved
+.catch => failure=> rejected
+
+.then and .catch scan be behaved a s an error handling functions
+
+promise with settimeout function
+
+whenever we are using promises, without error handling msgs , settimeout will not work inside it.
+
+Dependant operations:
+result got from one function is an input of the next the function.
+this is process occurs again and again => promise chaining
+
+if we are using multiple promises , there are more number of .then and .ctach needed
+which is a time consuming process and chances of syntax error is high.
+
+to overcome this drawback , we got promise.all method.
+it will return all the functions result at the same time eventhough we are using settimeout.
+
+promise.all will always returns a rejected value eventhough some functions 
+are getting fullfilled.=> major drawback(it hides all the resolved state,displayed only 
+rejected output)
+
+promiseallsettled=> it will shows all the outputs , no matter it got fulfilled or rejected.
+
+it will dispayed the value of which has lowest settimout.
+
+it shows the status of all the functions.
